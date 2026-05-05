@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişim Koleji - Yeni Nesil Teknoloji Atölyeleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .seminar-banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+        .seminar-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 5px solid #ffc107;
+        }
+        .banner-text {
+            padding: 20px;
+            color: white;
+        }
+        .banner-text h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+        .banner-text p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+        .intro-section {
+            padding: 30px 40px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .intro-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .intro-section p {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #555;
+            text-align: justify;
+        }
+        .intro-section .highlight {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+        .workshops-section {
+            padding: 30px 40px;
+            background: #f8fafc;
+        }
+        .workshop-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .workshop-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .workshop-card h4 {
+            color: #2c3e50;
+            font-size: 17px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .workshop-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .form-section {
+            padding: 30px 40px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        .form-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+            font-size: 14px;
+        }
+        .input-group input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e6ed;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+        .input-group input[type="text"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .selection-group {
+            background: #f1f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        .selection-group label.main-label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .checkbox-item:hover {
+            background: #eef2f5;
+        }
+        .checkbox-item input {
+            margin-right: 15px;
+            transform: scale(1.4);
+            accent-color: #3498db;
+            cursor: pointer;
+        }
+        .checkbox-item span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+        }
+        .consent-box {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .consent-box input {
+            margin-top: 4px;
+            margin-right: 12px;
+            transform: scale(1.3);
+            accent-color: #ffc107;
+        }
+        .consent-box label {
+            font-size: 13px;
+            color: #856404;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background: #27ae60;
+            color: white;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+        .submit-btn:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 600px) {
+            .intro-section, .workshops-section, .form-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- SEMİNER BANNER BÖLÜMÜ -->
+        <div class="seminar-banner">
+            <!-- Masaüstündeki görseli HTML ile aynı klasöre "seminar.png" adıyla koyman yeterli -->
+            <img src="seminar.png" alt="Yapay Zeka Semineri">
+            <div class="banner-text">
+                <h3>🤖 Yapay Zeka Seminerimiz Çok Yakında!</h3>
+                <p>Beylikdüzü genelinde düzenleyeceğimiz, siz değerli ebeveynlerimizin de katılımıyla gerçekleşecek "Dijital Çağın Ebeveyni Olmak" seminerimizin detayları yakında sizlerle!</p>
+            </div>
+        </div>
+
+        <!-- VİZYON VE GİRİŞ METNİ -->
+        <div class="intro-section">
+            <h2>Değerli Velilerimiz,</h2>
+            <p>Çocuklarımızın hızla dijitalleşen dünyada sadece teknoloji tüketicisi değil; üreten, strateji kuran ve odaklanma becerileri yüksek bireyler olarak yetişmesi okulumuzun en büyük önceliğidir.</p>
+            <p>Öğrencilerimizin bilişsel becerilerini en üst seviyeye taşımak ve teknolojiyle olan bağlarını nitelikli bir üretime dönüştürmek amacıyla, eğitim programımıza entegre ettiğimiz <span class="highlight">Yeni Nesil Teknoloji ve Beceri Atölyelerimiz</span> başlıyor!</p>
+            <p>Okulumuza özel olarak geliştirilmiş dijital eğitim altyapıları (Sihirli Okuyucu, Zeka Arenası vb.) ve modern eğitim yaklaşımlarıyla öğrencilerimizle buluşturacağımız atölyelerimiz şunlardır:</p>
+        </div>
+
+        <!-- ATÖLYE KARTLARI BÖLÜMÜ -->
+        <div class="workshops-section">
+            <div class="workshop-card" style="border-left-color: #9b59b6;">
+                <h4>🧠 1. Dijital ve Fiziksel Akıl-Zeka Oyunları</h4>
+                <p>Öğrencilerimiz geleneksel akıl oyunlarının yanı sıra, okulumuza özel dijital "Zeka Arenası" platformunda satranç, mangala ve strateji oyunları oynayarak hem masada hem de ekranda çok boyutlu düşünme becerileri kazanacaklar.</p>
+            </div>
+            <div class="workshop-card" style="border-left-color: #f1c40f;">
+                <h4>🧩 2. Algoritma ve Erken Dönem Kodlama</h4>
+                <p>Ekran bağımlılığı yaratmayan "bilgisayarsız (unplugged) kodlama" teknikleriyle başlayan bu sürecimizde, çocuklarımız erken yaşta oyun oynamayı değil, oyunların arka planındaki mantığı ve algoritmayı tasarlamayı öğrenecekler.</p>
+            </div>
+            <div class="workshop-card" style="border-left-color: #e67e22;">
+                <h4>🔍 3. Bilişsel Beceri ve Dikkat Geliştirme</h4>
+                <p>Öğrencilerimizin görsel algısını, okuma hızını ve odaklanma sürelerini artırmak amacıyla, okulumuzun özel dijital araçlarıyla (Sihirli Okuyucu, Dikte sistemleri) desteklenen bilişsel egzersizler uygulanacaktır.</p>
+            </div>
+            <div class="workshop-card" style="border-left-color: #e74c3c;">
+                <h4>🚀 4. YZ Destekli Yazılım ve Web Geliştirme</h4>
+                <p>Üst kademeler için: Öğrencilerimiz artık eski usul ezberci kodlama yerine, günümüz teknoloji dünyasının merkezinde olan "Yapay Zeka Destekli Geliştirme" modelini öğrenecek ve kendi dijital projelerini, web sitelerini hayata geçirecekler.</p>
+            </div>
+            <div class="workshop-card" style="border-left-color: #2ecc71;">
+                <h4>🛡️ 5. Dijital Erken Okuryazarlık ve Güvenli İnternet</h4>
+                <p>Çocuklarımızın internetin sınırsız dünyasında kaybolmaması, dijital ayak izlerini doğru yönetmesi ve siber tehlikelerden korunması en hassas noktamızdır. Öğrencilerimiz dijital mahremiyeti, siber zorbalıkla başa çıkmayı ve içerik doğrulamayı öğrenerek bilinçli ve güvende olan birer dijital vatandaş olarak yetişecekler.</p>
+            </div>
+        </div>
+
+        <!-- KAYIT FORMU BÖLÜMÜ -->
+        <div class="form-section">
+            <h3>Atölye Kayıt ve Onay Formu</h3>
+            <p style="text-align: center; margin-bottom: 25px; color: #666; font-size: 14px;">Değişim Koleji olarak, çocuklarımızı sadece bugünün sınavlarına değil, yarının dünyasına hazırlıyoruz. Lütfen katılmak istediğiniz atölyeleri aşağıdan seçiniz.</p>
+            
+            <div class="input-group">
+                <label>Öğrenci Adı Soyadı</label>
+                <input type="text" id="ogrenciAd" placeholder="Öğrencinin adını ve soyadını giriniz">
+            </div>
+
+            <div class="input-group">
+                <label>Veli Adı Soyadı</label>
+                <input type="text" id="veliAd" placeholder="Kendi adınızı ve soyadınızı giriniz">
+            </div>
+
+            <div class="selection-group">
+                <label class="main-label">Katılmak İstenilen Atölyeler (Birden fazla seçilebilir):</label>
+                
+                <label class="checkbox-item">
+                    <input type="checkbox" id="w1" value="Dijital ve Fiziksel Akıl-Zeka Oyunları">
+                    <span>1. Akıl-Zeka Oyunları Atölyesi</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="w2" value="Algoritma ve Erken Dönem Kodlama">
+                    <span>2. Erken Dönem Kodlama Atölyesi</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="w3" value="Bilişsel Beceri ve Dikkat Geliştirme">
+                    <span>3. Dikkat Geliştirme Atölyesi</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="w4" value="Yapay Zeka Destekli Yazılım (Üst Kademe)">
+                    <span>4. YZ Destekli Yazılım Atölyesi</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="w5" value="Dijital Erken Okuryazarlık ve Güvenli İnternet">
+                    <span>5. Güvenli İnternet Atölyesi</span>
+                </label>
+            </div>
+
+            <div class="consent-box">
+                <input type="checkbox" id="rizaBeyani">
+                <label for="rizaBeyani"><strong>Veli İzin ve Rıza Beyanı:</strong> Velisi bulunduğum yukarıda bilgileri yazılı öğrencinin, seçilen atölye çalışmalarına katılmasına, bu çalışmalarda kullanılacak okulumuza ait dijital platformlarda eğitim almasına onay veriyorum.</label>
+            </div>
+
+            <button class="submit-btn" onclick="kayitGonder()">Kaydı Tamamla ve Gönder</button>
+        </div>
+    </div>
+
+    <script>
+        function kayitGonder() {
+            var ogrenci = document.getElementById('ogrenciAd').value.trim();
+            var veli = document.getElementById('veliAd').value.trim();
+            var riza = document.getElementById('rizaBeyani').checked;
+
+            if(ogrenci === "" || veli === "") {
+                alert("Lütfen öğrenci ve veli adını eksiksiz doldurunuz.");
+                return;
+            }
+
+            if(!riza) {
+                alert("İşleme devam edebilmek için rıza beyanını onaylamanız gerekmektedir.");
+                return;
+            }
+
+            var secilenAtolyeler = [];
+            for(var i=1; i<=5; i++) {
+                var cb = document.getElementById('w'+i);
+                if(cb.checked) {
+                    secilenAtolyeler.push("✅ " + cb.value);
+                }
+            }
+
+            if(secilenAtolyeler.length === 0) {
+                alert("Lütfen en az bir atölye seçiniz.");
+                return;
+            }
+
+            // WhatsApp Mesajı Oluşturma
+            var mesaj = "🌟 *DEĞİŞİM KOLEJİ - YENİ NESİL ATÖLYE KAYDI*\n\n";
+            mesaj += "👤 *Öğrenci:* " + ogrenci + "\n";
+            mesaj += "👨‍👩‍👦 *Veli:* " + veli + "\n\n";
+            mesaj += "🎯 *Kayıt Olunan Atölyeler:*\n" + secilenAtolyeler.join("\n") + "\n\n";
+            mesaj += "📝 *Veli Rıza Beyanı:* Okudum ve Onaylıyorum.";
+
+            // Senkronize edilen telefon numarası
+            var telefonNumarasi = "905414204520"; 
+
+            var whatsappLink = "https://wa.me/" + telefonNumarasi + "?text=" + encodeURIComponent(mesaj);
+            
+            // Veliyi WhatsApp'a yönlendir
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+</html>
